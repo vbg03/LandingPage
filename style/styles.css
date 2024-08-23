@@ -1,0 +1,547 @@
+/* General and Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #1f1f1f;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px; /* Altura del header */
+    padding: 0 20px;
+}
+
+/* Estilo del texto LifeCraft */
+.logo-text {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+}
+
+/* Estilo para el enlace de volver */
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4caf50; /* Color verde */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Transición suave en el color */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    padding: 0; /* Sin padding */
+    box-shadow: none; /* Sin sombra */
+}
+
+.back-link:hover {
+    color: #43a047; /* Un verde ligeramente diferente en hover */
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+
+
+.logo-text h1 {
+    font-family: 'Raleway', sans-serif; /* Fuente */
+    font-size: 36px; /* Tamaño de fuente */
+    color: #ffffff; /* Color del texto */
+    margin: 0;
+}
+
+.logo-text h1 span#craft {
+    color: inherit; /* Hereda el color por defecto */
+    transition: color 0.3s ease; /* Suave transición de color */
+}
+
+.logo-text a {
+    text-decoration: none; /* Elimina la subrayado */
+}
+.logo-text a:hover h1 span#craft {
+    color: #4caf50; /* Cambia a verde solo la palabra "Craft" al pasar el cursor */
+}
+
+.logo img {
+    width: 150px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #4caf50;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a.active::before {
+    width: 100%;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #4caf50;
+}
+
+.cta-button {
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: auto;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button.right-align {
+    margin-left: auto;
+    margin-right: 0;
+    order: 2;
+}
+
+.cta-button:hover {
+    background-color: #43a047;
+    transform: translateY(-3px);
+}
+/* Enlace de Descargar Estilizado */
+.nav-link#download-link {
+    background-color: #4caf50; /* Fondo verde llamativo */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    margin-left: 20px; /* Espacio para separarlo de otros enlaces */
+    position: relative;
+}
+
+.nav-link#download-link::before {
+    content: none; /* Asegura que no haya línea debajo del enlace */
+}
+
+.nav-link#download-link:hover {
+    background-color: #347137; /* Cambio de color en hover */
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 50); /* Aumenta la sombra en hover */
+    transform: scale(1.05); /* Ligeramente agranda el botón al hacer hover */
+}
+
+/* Estilo del botón "Comienza ahora" */
+.cta-button#login-button:hover {
+    background-color: #347137; /* Cambio de color en hover */
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 50); /* Aumenta la sombra en hover */
+    transform: scale(1.05); /* Ligeramente agranda el botón al hacer hover */
+}
+
+/* Section Padding */
+.section-padding {
+    padding: 120px 0;
+}
+
+/* Titles Styling */
+.section-padding h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 36px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #3a3a3a 0%, #1f1f1f 100%), url('hero-background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Sección de Características */
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 50px;
+    text-align: center;
+}
+
+.feature {
+    background-color: rgba(31, 31, 31, 0.6); /* Fondo negro con 95% de opacidad */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.feature img {
+    width: 80px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature img:hover {
+    transform: scale(1.1);
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #4caf50;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+
+/* Sección de Galería */
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #1f1f1f;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Sección de Noticias */
+.news {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.news article {
+    background-color: rgba(31, 31, 31, 0.6); /* Fondo negro con 95% de opacidad */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(50% - 15px);
+
+}
+
+.news article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.news img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.news h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #4caf50;
+}
+
+.news p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+/* Sección de Créditos */
+#credits .credits-box {
+    background-color: #2c2c2c;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+#credits .credits-box:hover {
+    transform: scale(1.05);
+}
+
+#credits .credits-box h3 {
+    color: #4caf50;
+    margin: 10px 0;
+}
+
+#credits .credits-box p {
+    color: #bbb;
+    font-size: 18px;
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #4caf50;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #2c2c2c;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"],
+.modal-content input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.modal-content .cta-button {
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.modal-content .cta-button:hover {
+    background-color: #43a047;
+}
+
+.login-options {
+    margin-top: 10px;
+}
+
+.login-options a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+.close-button {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #4caf50;
+}
+
+/* Sección de Dispositivos */
+.devices {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.device img {
+    width: 80px;
+    transition: transform 0.3s ease;
+}
+
+.device p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #bbb;
+}
+
+.device img:hover {
+    transform: scale(1.1);
+}
+
+/* Gradients for sections */
+.gradient-bg {
+    background: linear-gradient(135deg, #2c3e50, #4caf50);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cta-button {
+        margin-top: 20px;
+    }
+
+    .features, .gallery, .news {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature img, .news img {
+        width: 60px;
+    }
+
+    .news article {
+        width: 100%;
+    }
+
+    .devices {
+        flex-direction: column;
+    }
+
+    .device img {
+        width: 60px;
+    }
+}
