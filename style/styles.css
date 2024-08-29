@@ -7,14 +7,14 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: #121212;
+    background-color: #000000;
     color: #ffffff;
     line-height: 1.6;
 }
 
 /* Header Styles */
 header {
-    background-color: #1f1f1f;
+    background-color: #0c0c0c;
     position: fixed;
     width: 100%;
     top: 0;
@@ -78,12 +78,12 @@ header .container {
 }
 
 .logo-text a:hover h1 span#now {
-    color: #4caf50;
+    color: #FFD700;
 }
 
 /* Botón de Iniciar Sesión */
 .cta-button {
-    background-color: #4caf50;
+    background-color: #e4c40b;
     color: #ffffff;
     padding: 12px 25px;
     text-decoration: none;
@@ -94,7 +94,7 @@ header .container {
 }
 
 .cta-button:hover {
-    background-color: #43a047;
+    background-color: #FFD700;
     transform: translateY(-3px);
 }
 
@@ -156,7 +156,7 @@ header .container {
 }
 
 .mobile-nav ul li a:hover {
-    color: #4caf50;
+    color: #FFD700;
     /* Color verde en hover */
 }
 
@@ -171,7 +171,7 @@ header .container {
 }
 
 .close-menu:hover {
-    color: #4caf50;
+    color: #FFD700;
 }
 
 /* Permite ver el contenido detrás del menú con una ligera transparencia */
@@ -221,7 +221,7 @@ body.mobile-nav-open {
 }
 
 .mobile-nav ul li a:hover {
-    color: #4caf50;
+    color: #FFD700;
 }
 
 .close-menu {
@@ -235,7 +235,7 @@ body.mobile-nav-open {
 }
 
 .close-menu:hover {
-    color: #4caf50;
+    color: #FFD700;
 }
 
 /* Responsive Design */
@@ -325,7 +325,7 @@ body.mobile-nav-open {
 .movie h3,
 .promo h3 {
     font-size: 20px;
-    color: #4caf50;
+    color: #FFD700;
     margin-bottom: 10px;
 }
 
