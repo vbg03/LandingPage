@@ -12,13 +12,6 @@ body {
     line-height: 1.6;
 }
 
-/* Container */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 /* Header Styles */
 header {
     background-color: #1f1f1f;
@@ -29,115 +22,66 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
 
+/* Estilos para centrar la sección de contacto */
+#contacto {
+    text-align: center;
+    /* Centra el texto horizontalmente */
+}
+
+#contacto .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#contacto p {
+    margin-bottom: 10px;
+    /* Espaciado entre líneas */
+}
+
+#contacto p:last-of-type {
+    margin-bottom: 0;
+    /* Sin margen en el último párrafo */
+}
+
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px; /* Altura del header */
+    height: 100px;
     padding: 0 20px;
 }
 
-/* Estilo del texto LifeCraft */
+/* Estilo del texto CinemaNow */
 .logo-text {
-    flex-grow: 1;
     display: flex;
-    justify-content: center; /* Centra el texto horizontalmente */
-    align-items: center; /* Centra el texto verticalmente */
+    align-items: center;
+    margin-left: 60px;
+    /* Ajusta este valor según necesites más o menos espacio */
 }
-
-/* Estilo para el enlace de volver */
-.back-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #4caf50; /* Color verde */
-    text-decoration: none; /* Sin subrayado */
-    font-size: 16px; /* Tamaño de fuente */
-    cursor: pointer;
-    transition: color 0.3s ease; /* Transición suave en el color */
-    background: none; /* Sin fondo */
-    border: none; /* Sin borde */
-    padding: 0; /* Sin padding */
-    box-shadow: none; /* Sin sombra */
-}
-
-.back-link:hover {
-    color: #43a047; /* Un verde ligeramente diferente en hover */
-    text-decoration: underline; /* Subrayado al pasar el cursor */
-}
-
-
 
 .logo-text h1 {
-    font-family: 'Raleway', sans-serif; /* Fuente */
-    font-size: 36px; /* Tamaño de fuente */
-    color: #ffffff; /* Color del texto */
+    font-size: 36px;
+    color: #ffffff;
     margin: 0;
+    cursor: pointer;
 }
 
-.logo-text h1 span#craft {
-    color: inherit; /* Hereda el color por defecto */
-    transition: color 0.3s ease; /* Suave transición de color */
+.logo-text h1 span#now {
+    color: inherit;
+    transition: color 0.3s ease;
 }
 
 .logo-text a {
-    text-decoration: none; /* Elimina la subrayado */
-}
-.logo-text a:hover h1 span#craft {
-    color: #4caf50; /* Cambia a verde solo la palabra "Craft" al pasar el cursor */
-}
-
-.logo img {
-    width: 150px;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li a {
     text-decoration: none;
-    color: #ffffff;
-    padding: 10px 15px;
-    font-weight: 600;
-    position: relative;
-    transition: all 0.3s ease;
 }
 
-nav ul li a::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: #4caf50;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-nav ul li a.active::before {
-    width: 100%;
-}
-
-nav ul li a:hover::before {
-    width: 100%;
-}
-
-nav ul li a:hover {
+.logo-text a:hover h1 span#now {
     color: #4caf50;
 }
 
+/* Botón de Iniciar Sesión */
 .cta-button {
     background-color: #4caf50;
     color: #ffffff;
@@ -146,65 +90,170 @@ nav ul li a:hover {
     border-radius: 30px;
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-left: auto;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.cta-button.right-align {
-    margin-left: auto;
-    margin-right: 0;
-    order: 2;
+    cursor: pointer;
 }
 
 .cta-button:hover {
     background-color: #43a047;
     transform: translateY(-3px);
 }
-/* Enlace de Descargar Estilizado */
-.nav-link#download-link {
-    background-color: #4caf50; /* Fondo verde llamativo */
+
+/* Estilos del menú hamburguesa */
+.hamburger-menu {
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    left: 20px;
+    /* Mueve el ícono del menú hamburguesa a la izquierda */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Menú móvil desplegable */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    left: 0;
+    /* Coloca el menú en el lado izquierdo de la pantalla */
+    top: 0;
+    width: 250px;
+    /* Ancho fijo del menú */
+    height: 100%;
+    /* Ocupa toda la altura de la pantalla */
+    background-color: #1f1f1f;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
+    /* Sombra para destacar el menú */
+    z-index: 1001;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    /* Suave animación de despliegue */
+    transform: translateX(-100%);
+    /* Mantiene el menú oculto fuera de la pantalla */
+    overflow-y: auto;
+    /* Permite desplazamiento si el contenido es demasiado largo */
+}
+
+.mobile-nav.open {
+    display: block;
+    transform: translateX(0);
+    /* Despliega el menú */
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav ul li a {
     color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 30px;
+    display: block;
+    padding: 15px 0;
     text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    margin-left: 20px; /* Espacio para separarlo de otros enlaces */
-    position: relative;
+    border-bottom: 1px solid #444;
+    transition: color 0.3s ease;
 }
 
-.nav-link#download-link::before {
-    content: none; /* Asegura que no haya línea debajo del enlace */
+.mobile-nav ul li a:hover {
+    color: #4caf50;
+    /* Color verde en hover */
 }
 
-.nav-link#download-link:hover {
-    background-color: #347137; /* Cambio de color en hover */
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 50); /* Aumenta la sombra en hover */
-    transform: scale(1.05); /* Ligeramente agranda el botón al hacer hover */
-}
-
-/* Estilo del botón "Comienza ahora" */
-.cta-button#login-button:hover {
-    background-color: #347137; /* Cambio de color en hover */
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 50); /* Aumenta la sombra en hover */
-    transform: scale(1.05); /* Ligeramente agranda el botón al hacer hover */
-}
-
-/* Section Padding */
-.section-padding {
-    padding: 120px 0;
-}
-
-/* Titles Styling */
-.section-padding h2 {
-    margin-top: 0;
-    margin-bottom: 40px;
-    text-align: center;
-    font-size: 36px;
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
     color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-menu:hover {
+    color: #4caf50;
+}
+
+/* Permite ver el contenido detrás del menú con una ligera transparencia */
+body.mobile-nav-open {
+    overflow: hidden;
+}
+
+.mobile-nav-open .mobile-nav {
+    background-color: rgba(31, 31, 31, 0.95);
+    /* Ligera transparencia para el fondo del menú */
+}
+
+
+/* Menú móvil desplegable */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #1f1f1f;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+}
+
+.mobile-nav.open {
+    transform: translateX(0);
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav ul li a {
+    color: #ffffff;
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav ul li a:hover {
+    color: #4caf50;
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-menu:hover {
+    color: #4caf50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .cta-buttons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
 }
 
 /* Hero Section */
@@ -231,137 +280,79 @@ nav ul li a:hover {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
 }
 
-/* Sección de Características */
-.features {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 50px;
+/* Section Padding */
+.section-padding {
+    padding: 120px 0;
+}
+
+.section-padding h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
     text-align: center;
+    font-size: 36px;
+    color: #ffffff;
 }
 
-.feature {
-    background-color: rgba(31, 31, 31, 0.6); /* Fondo negro con 95% de opacidad */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature:hover {
-    transform: translateY(-3px);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.7);
-}
-
-.feature img {
-    width: 80px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-.feature img:hover {
-    transform: scale(1.1);
-}
-
-.feature h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #4caf50;
-}
-
-.feature p {
-    font-size: 16px;
-    color: #bbb;
-}
-
-
-/* Sección de Galería */
-
-.gallery {
+/* Movies Grid */
+.movies-grid,
+.reviews-grid,
+.promo-grid {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
     flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
 }
 
-.gallery img {
-    width: 30%;
+.movie,
+.promo,
+.review {
+    background-color: #2c2c2c;
     border-radius: 10px;
-    padding: 10px;
-    background-color: #1f1f1f;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.7);
-}
-
-/* Sección de Noticias */
-.news {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.news article {
-    background-color: rgba(31, 31, 31, 0.6); /* Fondo negro con 95% de opacidad */
+    text-align: center;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-    margin-bottom: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: calc(50% - 15px);
-
+    width: 250px;
 }
 
-.news article:hover {
-    transform: translateY(-3px);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.news img {
+.movie img,
+.promo img {
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.news h3 {
     margin-bottom: 15px;
-    font-size: 22px;
-    color: #4caf50;
 }
 
-.news p {
+.movie h3,
+.promo h3 {
+    font-size: 20px;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.movie p,
+.promo p,
+.review p {
     font-size: 16px;
     color: #bbb;
 }
 
-/* Sección de Créditos */
-#credits .credits-box {
-    background-color: #2c2c2c;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 50px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+.movie:hover,
+.promo:hover,
+.review:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.7);
 }
 
-#credits .credits-box:hover {
-    transform: scale(1.05);
+/* Sección de Recomendaciones y Reseñas */
+.flex-sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
 }
 
-#credits .credits-box h3 {
-    color: #4caf50;
-    margin: 10px 0;
-}
-
-#credits .credits-box p {
-    color: #bbb;
-    font-size: 18px;
+.flex-sections .recommendations,
+.flex-sections .reviews {
+    width: 48%;
 }
 
 /* Footer */
@@ -451,6 +442,24 @@ footer {
     background-color: #43a047;
 }
 
+.back-link {
+    margin-top: 20px;
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    display: inline-block;
+}
+
+.back-link:hover {
+    color: #43a047;
+    text-decoration: underline;
+}
+
 .login-options {
     margin-top: 10px;
 }
@@ -477,71 +486,39 @@ footer {
     color: #4caf50;
 }
 
-/* Sección de Dispositivos */
-.devices {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.device img {
-    width: 80px;
-    transition: transform 0.3s ease;
-}
-
-.device p {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #bbb;
-}
-
-.device img:hover {
-    transform: scale(1.1);
-}
-
-/* Gradients for sections */
-.gradient-bg {
-    background: linear-gradient(135deg, #2c3e50, #4caf50);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    header {
-        padding: 15px 0;
-        flex-direction: column;
+
+    .mobile-nav {
+        display: none;
     }
 
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .cta-button {
-        margin-top: 20px;
-    }
-
-    .features, .gallery, .news {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .feature img, .news img {
-        width: 60px;
-    }
-
-    .news article {
+    .mobile-nav ul {
+        display: block;
+        background-color: #1f1f1f;
+        padding: 10px 0;
         width: 100%;
+        text-align: left;
     }
 
-    .devices {
+    .mobile-nav ul li a {
+        padding: 15px 20px;
+        border-bottom: 1px solid #444;
+    }
+
+    .flex-sections {
         flex-direction: column;
     }
 
-    .device img {
-        width: 60px;
+    .movies-grid,
+    .reviews-grid,
+    .promo-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movie img,
+    .promo img {
+        width: 100%;
     }
 }
